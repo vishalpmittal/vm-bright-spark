@@ -1,0 +1,39 @@
+.type-target {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin: 18px 0;
+  min-height: 1.6em;
+  word-spacing: 6px;
+}
+.type-target.done { animation: pop 0.35s ease; }
+@keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.04); } 100% { transform: scale(1); } }
+
+.type-target .ch { color: var(--muted); }
+.type-target .ch.ok { color: var(--good); }
+.type-target .ch.bad { color: var(--bad); text-decoration: underline wavy var(--bad); }
+.type-target .ch.cur {
+  color: var(--ink);
+  background: #ffe9a8;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 var(--star);
+}
+
+.type-input {
+  font-family: inherit;
+  font-size: 1.8rem;
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  border: 3px solid var(--stream-bar);
+  outline: none;
+}
+.type-input:focus { border-color: var(--accent); }
+
+.type-hint { color: var(--muted); font-size: 1.05rem; margin-top: 10px; }
+
+.result .stars { margin: 8px 0 4px; }

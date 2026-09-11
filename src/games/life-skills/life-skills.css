@@ -1,0 +1,71 @@
+/* ---- Clock ---- */
+.clock-wrap { display: flex; justify-content: center; margin: 8px 0 22px; }
+.clock-svg { width: 220px; height: 220px; max-width: 60vw; }
+.clock-face { fill: #fff; stroke: var(--ink); stroke-width: 4; }
+.clock-num { font-family: inherit; font-weight: 800; font-size: 15px; fill: var(--ink); }
+.clock-hour { stroke: var(--ink); stroke-width: 6; stroke-linecap: round; }
+.clock-minute { stroke: var(--accent-dark); stroke-width: 4; stroke-linecap: round; }
+.clock-dot { fill: var(--accent); }
+
+/* ---- Money / coins ---- */
+.money-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 8px 0 6px;
+  min-height: 70px;
+}
+.coin {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #3a2c00;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
+}
+.coin.c1  { background: #e6a06b; }   /* penny   */
+.coin.c5  { background: #cfd4da; }   /* nickel  */
+.coin.c10 { background: #e8ebee; }   /* dime    */
+.coin.c25 { background: #f2c94c; }   /* quarter */
+.coin.c50 { background: #dcdfe3; }   /* half $  */
+
+/* SVG coin / bill illustrations */
+.coin-art { width: 62px; height: 62px; }
+.bill-art { width: 108px; height: 57px; }
+.coin-art .coin-value { fill: #2a1c00; font-weight: 800; font-size: 24px; font-family: inherit; }
+.coin-art .coin-name { fill: #3a2c10; font-weight: 700; font-size: 11px; font-family: inherit; letter-spacing: 0.5px; }
+.bill-art .bill-num { fill: #0a3d1f; font-weight: 800; font-size: 22px; font-family: inherit; }
+.bill-art .bill-num-sm { fill: #0a3d1f; font-weight: 800; font-size: 12px; font-family: inherit; }
+.bill-art .bill-word { fill: #0a3d1f; font-weight: 700; font-size: 11px; font-family: inherit; letter-spacing: 0.5px; }
+
+/* Coin/bill shown inside a quiz prompt (Know Your Money) */
+.quiz-prompt .coin-art,
+.quiz-prompt .bill-art { display: block; margin: 0 auto 12px; width: 96px; height: auto; }
+.quiz-prompt .bill-art { width: 150px; }
+
+/* Dollar bills */
+.bill {
+  min-width: 84px;
+  height: 52px;
+  padding: 0 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #0a3d1f;
+  border: 2px solid rgba(0, 60, 30, 0.35);
+  box-shadow: var(--shadow);
+  background: #bfe6c8;
+}
+.bill.b1  { background: #cdeccf; }
+.bill.b5  { background: #bfe6c8; }
+.bill.b10 { background: #a9dcc0; }
+.bill.b20 { background: #8fd0b0; }

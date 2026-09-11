@@ -1,0 +1,68 @@
+.arith-eq {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--ink);
+  text-align: center;
+  margin: 6px 0 14px;
+  letter-spacing: 2px;
+}
+
+.arith-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  min-height: 60px;
+  margin-bottom: 18px;
+}
+.arith-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  max-width: 320px;
+}
+.arith-emoji { font-size: 2rem; line-height: 1; }
+.arith-emoji.gone {
+  opacity: 0.35;
+  position: relative;
+}
+.arith-emoji.gone::after {
+  content: '';
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 50%;
+  height: 4px;
+  background: var(--bad);
+  transform: rotate(-12deg);
+  border-radius: 2px;
+}
+.arith-fallback { font-size: 3.4rem; line-height: 1; }
+.arith-sign { font-size: 2.4rem; font-weight: 800; color: var(--accent-dark); }
+.arith-zero { font-size: 1.6rem; font-weight: 800; color: var(--muted); padding: 0 8px; }
+
+.arith-choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.choice-btn {
+  background: var(--stream-bar);
+  font-size: 2rem;
+  font-weight: 800;
+  padding: 20px 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.06s ease;
+}
+.choice-btn:hover { transform: translateY(-2px); }
+.choice-btn:active { transform: translateY(2px); }
+.choice-btn.right { background: var(--good); color: #fff; }
+.choice-btn.wrong { background: var(--bad); color: #fff; animation: shake 0.3s; }

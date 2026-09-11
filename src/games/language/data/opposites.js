@@ -1,0 +1,26 @@
+// Opposite (antonym) pairs, kid-friendly. Quiz asks the opposite of `word`.
+
+export const OPPOSITES = [
+  { word: 'big', opposite: 'small' },
+  { word: 'hot', opposite: 'cold' },
+  { word: 'up', opposite: 'down' },
+  { word: 'fast', opposite: 'slow' },
+  { word: 'happy', opposite: 'sad' },
+  { word: 'day', opposite: 'night' },
+  { word: 'open', opposite: 'closed' },
+  { word: 'wet', opposite: 'dry' },
+  { word: 'high', opposite: 'low' },
+  { word: 'in', opposite: 'out' },
+  { word: 'old', opposite: 'new' },
+  { word: 'hard', opposite: 'soft' },
+  { word: 'light', opposite: 'dark' },
+  { word: 'full', opposite: 'empty' },
+  { word: 'loud', opposite: 'quiet' },
+  { word: 'clean', opposite: 'dirty' },
+  { word: 'push', opposite: 'pull' },
+  { word: 'left', opposite: 'right' },
+  { word: 'over', opposite: 'under' },
+  { word: 'first', opposite: 'last' },
+  { word: 'on', opposite: 'off' },
+  { word: 'good', opposite: 'bad' },
+];

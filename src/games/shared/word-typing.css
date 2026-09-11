@@ -1,0 +1,11 @@
+/* Word-typing games (Spelling Bee, Sight Words) reuse .type-target / .type-input
+   / .type-hint from typing.css. These styles cover the hidden-word dots. */
+
+.type-target .dot {
+  color: var(--stream-bar);
+  font-size: 2.4rem;
+  margin: 0 4px;
+}
+.type-target .dot.filled {
+  color: var(--accent);
+}

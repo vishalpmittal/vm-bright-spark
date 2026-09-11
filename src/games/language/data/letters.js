@@ -1,0 +1,31 @@
+// The 26 letters: uppercase paired with lowercase.
+// Quiz asks for the small (lowercase) letter that matches an uppercase one.
+
+export const LETTERS = [
+  { upper: 'A', lower: 'a' },
+  { upper: 'B', lower: 'b' },
+  { upper: 'C', lower: 'c' },
+  { upper: 'D', lower: 'd' },
+  { upper: 'E', lower: 'e' },
+  { upper: 'F', lower: 'f' },
+  { upper: 'G', lower: 'g' },
+  { upper: 'H', lower: 'h' },
+  { upper: 'I', lower: 'i' },
+  { upper: 'J', lower: 'j' },
+  { upper: 'K', lower: 'k' },
+  { upper: 'L', lower: 'l' },
+  { upper: 'M', lower: 'm' },
+  { upper: 'N', lower: 'n' },
+  { upper: 'O', lower: 'o' },
+  { upper: 'P', lower: 'p' },
+  { upper: 'Q', lower: 'q' },
+  { upper: 'R', lower: 'r' },
+  { upper: 'S', lower: 's' },
+  { upper: 'T', lower: 't' },
+  { upper: 'U', lower: 'u' },
+  { upper: 'V', lower: 'v' },
+  { upper: 'W', lower: 'w' },
+  { upper: 'X', lower: 'x' },
+  { upper: 'Y', lower: 'y' },
+  { upper: 'Z', lower: 'z' },
+];

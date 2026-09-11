@@ -1,0 +1,359 @@
+:root {
+  --bg: #fef6e4;
+  --panel: #ffffff;
+  --stream-bar: #8bd3dd;
+  --game-bar: #f3d2c1;
+  --ink: #001858;
+  --muted: #5c6784;
+  --accent: #f582ae;
+  --accent-dark: #d64d8a;
+  --good: #3bb273;
+  --bad: #e15b64;
+  --star: #ffc94d;
+  --radius: 18px;
+  --shadow: 0 6px 0 rgba(0, 24, 88, 0.12);
+  font-family: "Comic Sans MS", "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+#app { height: 100vh; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  color: var(--ink);
+}
+
+/* ---------- Centered full-screen screens (setup, players) ---------- */
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 32px;
+  text-align: center;
+}
+
+.screen h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0; }
+.screen p.lead { font-size: 1.3rem; color: var(--muted); max-width: 42ch; margin: 0; }
+
+.big-btn {
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 18px 34px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease;
+}
+.big-btn:hover { transform: translateY(-2px); }
+.big-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(0,24,88,0.12); }
+.big-btn.secondary { background: var(--stream-bar); color: var(--ink); }
+
+.notice {
+  background: #fff3f3;
+  border: 3px dashed var(--bad);
+  color: var(--bad);
+  padding: 20px 26px;
+  border-radius: var(--radius);
+  max-width: 46ch;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+.notice code { background: #ffe0e0; padding: 2px 6px; border-radius: 6px; }
+
+/* ---------- Player cards ---------- */
+.player-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 720px;
+}
+.player-card {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.08s ease;
+}
+.player-card:hover { transform: translateY(-3px); }
+.player-card .avatar { font-size: 2.6rem; }
+.player-card .sub { font-size: 0.85rem; font-weight: 400; color: var(--muted); }
+
+.add-player {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.add-player input {
+  font-family: inherit;
+  font-size: 1.3rem;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  border: 3px solid var(--stream-bar);
+  outline: none;
+  min-width: 220px;
+}
+.add-player input:focus { border-color: var(--accent); }
+
+.link-btn {
+  background: none;
+  color: var(--muted);
+  text-decoration: underline;
+  font-size: 1rem;
+  padding: 6px 10px;
+}
+
+/* ---------- App shell: header + two nav bars + game host ---------- */
+.shell {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 22px;
+  background: var(--panel);
+  box-shadow: 0 3px 0 rgba(0,24,88,0.08);
+  z-index: 2;
+}
+.topbar .brand { font-size: 1.5rem; font-weight: 700; }
+.topbar .who { display: flex; align-items: center; gap: 14px; font-size: 1.05rem; }
+.topbar .who .name { font-weight: 700; }
+
+.body {
+  display: grid;
+  grid-template-columns: 200px 220px 1fr;
+  min-height: 0;
+}
+
+.nav {
+  overflow-y: auto;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.nav.streams { background: var(--stream-bar); }
+.nav.games { background: var(--game-bar); }
+.nav h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink);
+  opacity: 0.6;
+  margin: 4px 8px;
+}
+.nav .cat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink);
+  opacity: 0.55;
+  margin: 10px 8px 2px;
+}
+.nav-btn {
+  background: rgba(255,255,255,0.65);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.06s ease, background 0.1s ease;
+}
+.nav-btn .ico { font-size: 1.4rem; }
+.nav-btn:hover { background: #fff; transform: translateX(3px); }
+.nav-btn.active { background: #fff; box-shadow: var(--shadow); }
+.nav-btn .desc { display: block; font-size: 0.72rem; font-weight: 400; color: var(--muted); }
+
+.game-host {
+  overflow-y: auto;
+  padding: 28px;
+  min-height: 0;
+}
+
+/* ---------- Shared game UI helpers ---------- */
+.game-title { font-size: 2rem; margin: 0 0 4px; }
+.game-sub { color: var(--muted); margin: 0 0 20px; font-size: 1.1rem; }
+
+.card {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  max-width: 760px;
+}
+
+.stars { font-size: 2.6rem; letter-spacing: 6px; }
+.star-on { filter: none; }
+.star-off { filter: grayscale(1) opacity(0.35); }
+
+.stat-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 18px 0; }
+.stat {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  text-align: center;
+  min-width: 130px;
+}
+.stat .num { font-size: 2.6rem; font-weight: 800; color: var(--accent-dark); line-height: 1; }
+.stat .label { font-size: 0.95rem; color: var(--muted); margin-top: 6px; }
+
+.motivation {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--good);
+  margin: 16px 0;
+}
+
+.row-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 18px; }
+
+/* ---------- Age slider ---------- */
+.age-slider {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.age-label { font-size: 1.4rem; font-weight: 800; color: var(--accent-dark); }
+.age-slider input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--stream-bar), var(--accent));
+  outline: none;
+  cursor: pointer;
+}
+.age-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid var(--accent);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.age-slider input[type="range"]::-moz-range-thumb {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid var(--accent);
+  cursor: pointer;
+}
+.age-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 0 2px;
+}
+
+/* ---------- Add-player box ---------- */
+.add-box {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 440px;
+}
+.add-title { font-size: 1.3rem; font-weight: 800; margin: 0; }
+.add-box input[type="text"], .add-box > input {
+  font-family: inherit;
+  font-size: 1.3rem;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  border: 3px solid var(--stream-bar);
+  outline: none;
+  width: 100%;
+}
+.add-box > input:focus { border-color: var(--accent); }
+
+/* ---------- Age chip in top bar ---------- */
+.age-chip {
+  background: var(--game-bar);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 3px 0 rgba(0,24,88,0.12);
+}
+.age-chip:hover { transform: translateY(-1px); }
+
+/* ---------- Age editor overlay ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 24, 88, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 24px;
+}
+.overlay-box {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 0 rgba(0,24,88,0.18);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 440px;
+  width: 100%;
+}
+.overlay-title { margin: 0; font-size: 1.5rem; }
+.overlay-hint { margin: 0; color: var(--muted); font-size: 1rem; }
+
+/* ---------- Level chip (shown during games) ---------- */
+.level-chip {
+  display: inline-block;
+  background: var(--star);
+  color: var(--ink);
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 2px 12px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .body { grid-template-columns: 130px 150px 1fr; }
+}

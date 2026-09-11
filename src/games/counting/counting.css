@@ -1,0 +1,50 @@
+.count-q { font-size: 1.8rem; margin: 6px 0 14px; }
+
+.count-stage {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 22px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  min-height: 90px;
+}
+.count-item {
+  font-size: 3rem;
+  line-height: 1;
+  animation: drop 0.35s ease both;
+}
+@keyframes drop {
+  0% { transform: translateY(-16px) scale(0.6); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.count-pad {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.num-btn {
+  background: var(--stream-bar);
+  font-size: 1.8rem;
+  font-weight: 800;
+  padding: 16px 0;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.06s ease;
+}
+.num-btn:hover { transform: translateY(-2px); }
+.num-btn:active { transform: translateY(2px); }
+.num-btn.right { background: var(--good); color: #fff; }
+.num-btn.wrong { background: var(--bad); color: #fff; animation: shake 0.3s; }
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+.count-feedback { font-size: 1.4rem; font-weight: 700; min-height: 1.4em; margin-top: 16px; }
+.count-feedback.good { color: var(--good); }
+.count-feedback.bad { color: var(--bad); }

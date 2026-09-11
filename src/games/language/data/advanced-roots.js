@@ -1,0 +1,61 @@
+// Advanced Roots — the fuller Greek & Latin lexicon from the guideline (§5).
+// These are championship-level combining forms (ages ~11+). Each question names
+// real words that contain the root; the child deduces the meaning. Answers are
+// single-word meanings; true synonyms use an identical string (e.g. corp = somat
+// = body) so the engine never offers a duplicate-correct wrong choice.
+
+export const ADVANCED_ROOTS = [
+  // --- Greek ---
+  { q: "The Greek root 'anthro' is in philanthropy. What does it mean?", a: 'human' },
+  { q: "The Greek root 'bathy' is in bathysphere (a deep-sea ball). What does it mean?", a: 'deep' },
+  { q: "The Greek root 'gloss' is in glossary. What does it mean?", a: 'tongue' },
+  { q: "The Greek root 'glyc' is in glucose and glycogen. What does it mean?", a: 'sweet' },
+  { q: "The Greek root 'gno' is in agnostic and diagnose. What does it mean?", a: 'know' },
+  { q: "The Greek root 'hem' is in hemoglobin and hemorrhage. What does it mean?", a: 'blood' },
+  { q: "The Greek root 'ichthy' is in ichthyology. What does it mean?", a: 'fish' },
+  { q: "The Greek root 'necro' is in necromancer. What does it mean?", a: 'dead' },
+  { q: "The Greek root 'pachy' is in pachyderm (an elephant). What does it mean?", a: 'thick' },
+  { q: "The Greek root 'schiz' is in schism. What does it mean?", a: 'split' },
+  { q: "The Greek root 'somat' is in psychosomatic. What does it mean?", a: 'body' },
+  { q: "The Greek root 'tachy' is in tachometer (a speed dial). What does it mean?", a: 'fast' },
+
+  // --- Latin ---
+  { q: "The Latin root 'ambul' is in ambulance and amble. What does it mean?", a: 'walk' },
+  { q: "The Latin root 'bell' is in rebellion. What does it mean?", a: 'war' },
+  { q: "The Latin root 'cand' is in candle and candid. What does it mean?", a: 'white' },
+  { q: "The Latin root 'cap' is in capture and captive. What does it mean?", a: 'take' },
+  { q: "The Latin root 'ced' is in recede and precede. What does it mean?", a: 'go' },
+  { q: "The Latin root 'cis' is in scissors and incision. What does it mean?", a: 'cut' },
+  { q: "The Latin root 'clam' is in exclaim and clamor. What does it mean?", a: 'shout' },
+  { q: "The Latin root 'corp' is in corpse and corporation. What does it mean?", a: 'body' },
+  { q: "The Latin root 'cred' is in credit and incredible. What does it mean?", a: 'believe' },
+  { q: "The Latin root 'curs' is in current and cursor. What does it mean?", a: 'run' },
+  { q: "The Latin root 'doc' is in doctor and document. What does it mean?", a: 'teach' },
+  { q: "The Latin root 'duct' is in conduct and aqueduct. What does it mean?", a: 'lead' },
+  { q: "The Latin root 'err' is in error and errant. What does it mean?", a: 'wander' },
+  { q: "The Latin root 'fac' is in factory and manufacture. What does it mean?", a: 'make' },
+  { q: "The Latin root 'fer' is in transfer and ferry. What does it mean?", a: 'carry' },
+  { q: "The Latin root 'fid' is in fidelity and confident. What does it mean?", a: 'faith' },
+  { q: "The Latin root 'flu' is in fluid and fluent. What does it mean?", a: 'flow' },
+  { q: "The Latin root 'fract' is in fracture and fragment. What does it mean?", a: 'break' },
+  { q: "The Latin root 'fus' is in fuse and confuse. What does it mean?", a: 'melt' },
+  { q: "The Latin root 'grad' is in graduate and gradual. What does it mean?", a: 'step' },
+  { q: "The Latin root 'ject' is in eject and project. What does it mean?", a: 'throw' },
+  { q: "The Latin root 'jud' is in judge and jury. What does it mean?", a: 'law' },
+  { q: "The Latin root 'leg' is in legible and legend. What does it mean?", a: 'read' },
+  { q: "The Latin root 'loqu' is in eloquent and ventriloquist. What does it mean?", a: 'speak' },
+  { q: "The Latin root 'luc' is in lucid and translucent. What does it mean?", a: 'light' },
+  { q: "The Latin root 'miss' is in transmit and mission. What does it mean?", a: 'send' },
+  { q: "The Latin root 'noc' is in noxious and innocent. What does it mean?", a: 'harm' },
+  { q: "The Latin root 'pac' is in pacify and Pacific. What does it mean?", a: 'peace' },
+  { q: "The Latin root 'pugn' is in repugnant. What does it mean?", a: 'fight' },
+  { q: "The Latin root 'rog' is in interrogate. What does it mean?", a: 'ask' },
+  { q: "The Latin root 'sid' is in sediment and resident. What does it mean?", a: 'sit' },
+  { q: "The Latin root 'sens' is in sentiment and sensation. What does it mean?", a: 'feel' },
+  { q: "The Latin root 'tang' is in tangible and contact. What does it mean?", a: 'touch' },
+  { q: "The Latin root 'ten' is in tenant and retain. What does it mean?", a: 'hold' },
+  { q: "The Latin root 'tort' is in contort and torture. What does it mean?", a: 'twist' },
+  { q: "The Latin root 'vert' is in reverse and convert. What does it mean?", a: 'turn' },
+  { q: "The Latin root 'viv' is in survive and vivid. What does it mean?", a: 'live' },
+  { q: "The Latin root 'voc' is in vocal and vocabulary. What does it mean?", a: 'voice' },
+];
